@@ -39,8 +39,8 @@ namespace SampleXamarinApp
         {
             base.OnStart();
             AppCenter.Start("ios=7f51a351-68d3-4ee4-ad58-45873e0bc217;" +
-                  "uwp={Your UWP App secret here};" +
-                  "android={Your Android App secret here}",
+                  "uwp=39c2d0a3-9841-45ce-bcb2-e8d9faaeab0a;" +
+                  "android=0927608b-0b8f-4c40-baa6-7f30f529d99a",
                   typeof(Analytics), typeof(Crashes));
         }
     }

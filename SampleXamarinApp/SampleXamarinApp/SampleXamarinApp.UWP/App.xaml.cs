@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +33,8 @@ namespace SampleXamarinApp.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            AppCenter.Start("39c2d0a3-9841-45ce-bcb2-e8d9faaeab0a", typeof(Analytics), typeof(Crashes));
         }
 
         /// <summary>
