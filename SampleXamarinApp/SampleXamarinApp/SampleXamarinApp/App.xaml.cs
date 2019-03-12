@@ -1,4 +1,7 @@
-﻿using Prism;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Prism;
 using Prism.Ioc;
 using SampleXamarinApp.ViewModels;
 using SampleXamarinApp.Views;
@@ -30,6 +33,15 @@ namespace SampleXamarinApp
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            AppCenter.Start("ios=7f51a351-68d3-4ee4-ad58-45873e0bc217;" +
+                  "uwp={Your UWP App secret here};" +
+                  "android={Your Android App secret here}",
+                  typeof(Analytics), typeof(Crashes));
         }
     }
 }
